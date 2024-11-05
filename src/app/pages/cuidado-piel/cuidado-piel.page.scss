@@ -1,0 +1,23 @@
+ion-accordion-group {
+    margin-top: 20px;
+    align-items: flex-end;
+}
+
+ion-item[slot="header"] {
+    font-weight: bold;
+    --color: #e9e3e3; /* Color del texto */
+    --background: #4b4a48; /* Último color de fondo aplicado */
+}
+
+ion-accordion {
+    margin-bottom: 15px; /* Espacio de separación entre acordeones */
+    width: 80%; /* Ajusta el ancho según tus preferencias */
+    max-width: 400px; /* Ancho máximo */
+    border-radius: 3px; /* Bordes redondeados para mejor estética */
+    border: 1cqw solid white; /* Borde blanco */
+    box-shadow: 0 0 10px 2px rgba(194, 192, 192, 0.519); /* Brillo alrededor del borde */
+}
+
+ion-content {
+    --background: #0b0b0b; /* Color de fondo temporal */
+}

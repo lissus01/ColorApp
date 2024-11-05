@@ -1,0 +1,106 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="principal"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Colorimetria</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Colorimetria</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ng-container *ngIf="photos$ | async as photos">
+    <ion-grid>
+      <ion-row *ngFor="let photo of photos; index as position">
+        <!-- Columna de la imagen -->
+        <ion-col size="6">
+          <ion-card>
+            <ion-img 
+              [src]="photo.webviewPath"
+              class="ion-margin-bottom"
+              [alt]="'photo ' + position">
+            </ion-img>
+            <ion-button 
+              fill="clear" 
+              color="danger"
+              expand="block"
+              (click)="deletePhoto(photo.filepath)">
+              <ion-icon name="trash" slot="start"></ion-icon>
+              Eliminar
+            </ion-button>
+          </ion-card>
+        </ion-col>
+
+        <!-- Columna de la paleta de colores -->
+        <ion-col size="6">
+          <ion-card *ngIf="photo.colorPalette">
+            <ion-card-header>
+              <ion-card-title class="ion-text-center">Paleta de Colores</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <div class="color-grid">
+                <div class="color-item" 
+                     *ngFor="let color of photo.colorPalette.hex"
+                     [style.background-color]="color">
+                  <span class="color-hex">{{ color }}</span>
+                </div>
+              </div>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngIf="!photo.colorPalette">
+            <ion-card-content class="ion-text-center">
+              <ion-spinner name="dots"></ion-spinner>
+              <p>Obteniendo paleta de colores...</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Mensaje cuando no hay fotos -->
+    <div *ngIf="photos.length === 0" class="ion-text-center ion-padding">
+      <p>No hay fotos todavía. ¡Toma una!</p>
+    </div>
+  </ng-container>
+
+  <!-- Botón de cámara -->
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="takePhoto()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+<style>
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .color-item {
+    aspect-ratio: 1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .color-hex {
+    background: rgba(255,255,255,0.9);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    position: absolute;
+    bottom: 4px;
+  }
+</style>

@@ -1,0 +1,68 @@
+<ion-menu contentId="main-content"> <!-- Menú que se abrirá-->
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item routerLink="/cuidado-piel">
+        <ion-label>Propiedades (TPS)</ion-label>
+        <ion-icon name="dice-outline" slot="end"></ion-icon>
+      </ion-item>     
+
+      <ion-item routerLink="/colorimetria">
+        <ion-label>Colorimetria</ion-label>
+        <ion-icon name="camera-outline" slot="end"></ion-icon>
+      </ion-item> 
+
+      <ion-item routerLink="/colores-complementarios">
+        <ion-label>Colores Complementarios</ion-label>
+        <ion-icon name="color-palette-outline" slot="end"></ion-icon>
+      </ion-item>
+
+    </ion-list>
+  </ion-content>     
+   
+</ion-menu>
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start"> <!-- Botón del menú en el lado derecho usando propiedad slot-->
+      <ion-menu-button></ion-menu-button> <!-- Este botón abre el menú -->
+    </ion-buttons>
+    <ion-title></ion-title>
+    <ion-buttons slot="end"> <!-- Botones a la derecha usando propiedad slot -->
+      <ion-button (click)="navegarCambiarContrasena()">
+        <ion-icon name="key-outline" slot="icon-only" style="color: rgb(5, 5, 5);"></ion-icon>
+      </ion-button>
+      <ion-button (click)="CerrarSesion()">
+        <ion-icon name="log-out-outline" slot="icon-only" style="color: rgb(5, 5, 5);"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" id="main-content">
+  <ion-card>
+    <div class="carousel">
+      <div class="carousel-images">
+        <img *ngFor="let imagen of imagenes; let i = index" 
+             [src]="imagen" 
+             class="carousel-image" 
+             [ngClass]="{'active': i === currentIndex}">
+      </div>
+    </div>
+
+    <ion-card-header>
+      <ion-card-title> Hola ! {{ usuario }} </ion-card-title>
+      <ion-card-subtitle> te extrañabamos {{ contrasena2 }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

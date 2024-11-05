@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Descripción (TPS)</ion-title>
+    <ion-back-button slot="start" defaultHref="principal"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-accordion-group expand="inset">
+    <!-- Primer acordeón -->
+    <ion-accordion value="first">
+      <ion-item slot="header">
+        <ion-label>Contraste</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Ajusta la diferencia entre los tonos claros y oscuros en la imagen
+      </div>
+    </ion-accordion>
+
+    <!-- Segundo acordeón -->
+    <ion-accordion value="second">
+      <ion-item slot="header">
+        <ion-label>Opacidad</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Define la transparencia de la imagen; 100% es opaco y 0% es completamente transparente.
+      </div>
+    </ion-accordion>
+
+    <!-- Tercer acordeón -->
+    <ion-accordion value="third">
+      <ion-item slot="header">
+        <ion-label>Saturación</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Controla la intensidad de los colores. Valores más altos hacen que los colores se vean más vivos, mientras que valores bajos crean un efecto más apagado.
+      </div>
+    </ion-accordion>
+
+    <!-- Cuarto acordeón -->
+    <ion-accordion value="fourth">
+      <ion-item slot="header">
+        <ion-label>Exposición</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Controla la cantidad de luz capturada en la imagen, similar al brillo pero con un enfoque en los detalles.
+      </div>
+    </ion-accordion>
+
+    <!-- Quinto acordeón -->
+    <ion-accordion value="fifth">
+      <ion-item slot="header">
+        <ion-label>Nitidez</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Aumenta la claridad de los bordes y detalles en la imagen.
+      </div>
+    </ion-accordion>
+
+    <!-- Sexto acordeón -->
+    <ion-accordion value="sixth">
+      <ion-item slot="header">
+        <ion-label>Viñeta</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Añade un efecto de oscurecimiento en los bordes de la imagen para enfocar la atención en el centro.
+      </div>
+    </ion-accordion>
+
+    <!-- Séptimo acordeón -->
+    <ion-accordion value="seventh">
+      <ion-item slot="header">
+        <ion-label>Granulado</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Agrega un efecto de ruido o grano, simulando un estilo de película antigua.
+      </div>
+    </ion-accordion>
+
+    <!-- Octavo acordeón -->
+    <ion-accordion value="eighth">
+      <ion-item slot="header">
+        <ion-label>Sombras</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Permite oscurecer o aclarar las áreas más oscuras de la imagen sin afectar las áreas claras.
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>

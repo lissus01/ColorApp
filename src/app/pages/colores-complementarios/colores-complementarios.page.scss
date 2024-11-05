@@ -1,0 +1,47 @@
+
+.image-container {
+    position: relative;
+    width: 100%; /* Ajusta el tamaño según tus necesidades */
+    height: 120px; /* Ajusta la altura según tus necesidades */
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para que la imagen cubra todo el contenedor */
+    opacity: 0; /* Comienza invisible */
+    transition: opacity 1s ease-in-out; /* Transición de opacidad */
+  }
+  
+  .image-container img.visible {
+    opacity: 1; /* Imagen visible */
+  }
+  
+  img {
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    transition: opacity 1s ease; /* Transición de opacidad */
+    opacity: 0; /* Comienza invisible */
+  }
+  
+  img.visible {
+    opacity: 1; /* Imagen visible */
+  }
+  
+  ion-card {
+    --background: rgba(252, 250, 250, 0.933); /* Gris con 60% de transparencia */
+    border-radius: 1px; /* Opcional: bordes redondeados */
+    backdrop-filter: blur(5px); /* Opcional: efecto de desenfoque para mayor estética */
+  }
+
+  ion-toolbar {
+      --background: #ffffff; /* Gris */
+       color: #080808; /* Opcional: color de texto en blanco */
+  }
+  
+   ion-content {
+  --background: #161515; /* Fondo blanco */
+  }

@@ -1,0 +1,105 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Colores Complementarios</ion-title>
+    <ion-back-button slot="start" defaultHref="principal"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Colores Complementarios</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Tarjeta 1 -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Rojo - Verde</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="image-container">
+        <img *ngFor="let img of imagenesPorTarjeta[0]; let imgIndex = index"
+             [src]="img"
+             [ngClass]="{'visible': imgIndex === currentIndex[0]}" />
+      </div>
+      <ion-card-subtitle> #ff2d00 -  #108627  </ion-card-subtitle>
+
+      <ion-card-content>
+        Tip: Usa rojo para destacar mensajes clave y verde como fondo equilibrante.
+      </ion-card-content>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Tarjeta 2 -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Azul - Naranja</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="image-container">
+        <img *ngFor="let img of imagenesPorTarjeta[1]; let imgIndex = index"
+             [src]="img"
+             [ngClass]="{'visible': imgIndex === currentIndex[1]}" />
+      </div>
+      <ion-card-subtitle> #0d3b7e  - #fc703c </ion-card-subtitle>
+      <ion-card-content>
+        Tip: Aplica azul como color principal y naranja para botones o íconos que atraen atención.
+      </ion-card-content>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Tarjeta 3 -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Amarillo - Violeta</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="image-container">
+        <img *ngFor="let img of imagenesPorTarjeta[2]; let imgIndex = index"
+             [src]="img"
+             [ngClass]="{'visible': imgIndex === currentIndex[2]}" />
+      </div>
+      <ion-card-subtitle> #FFC300  - #7c42a9 </ion-card-subtitle>
+      <ion-card-content>
+        Tip: Emplea amarillo en el fondo para energía y violeta en elementos textuales para sofisticación.
+      </ion-card-content>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Tarjeta 4 -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Verde Azulado - Rojo Anaranjado</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="image-container">
+        <img *ngFor="let img of imagenesPorTarjeta[3]; let imgIndex = index"
+             [src]="img"
+             [ngClass]="{'visible': imgIndex === currentIndex[3]}" />
+      </div>
+      <ion-card-subtitle> #44897c - #ea5b21  </ion-card-subtitle>
+      <ion-card-content>
+        Tip: Usa verde azulado en fondos y rojo anaranjado en detalles que resalten.
+      </ion-card-content>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Tarjeta 5 -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Azul Violeta - Amarillo Anaranjado</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="image-container">
+        <img *ngFor="let img of imagenesPorTarjeta[4]; let imgIndex = index"
+             [src]="img"
+             [ngClass]="{'visible': imgIndex === currentIndex[4]}" />
+      </div>
+      <ion-card-subtitle> #312cd4  - #FFC300 </ion-card-subtitle>
+      <ion-card-content>
+        Tip: Aplica azul violeta como base y amarillo anaranjado para destacar elementos importantes.
+      </ion-card-content>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
